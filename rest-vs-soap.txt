@@ -1,0 +1,18 @@
+* SOAP is a standards-based Web services access protocol originally developed by Microsoft,
+* SOAP relies exclusively on XML to provide messaging services.
+* Microsoft originally developed SOAP to take the place of older technologies that don’t work well on the Internet such as the Distributed Component Object Model (DCOM) and Common Object Request Broker Architecture (CORBA). 
+* These technologies fail because they rely on binary messaging; the XML messaging that SOAP employs works better over the Internet.	
+* An interesting SOAP feature is that you don’t necessarily have to use it with the HyperText Transfer Protocol (HTTP) transport. There’s an actual specification for using SOAP over Simple Mail Transfer Protocol (SMTP) 
+
+SOAP is definitely the heavyweight choice for Web service access. It provides the following advantages when compared to REST:
+
+* Language, platform, and transport independent (REST requires use of HTTP)
+* Works well in distributed enterprise environments (REST assumes direct point-to-point communication)
+* Provides significant pre-build extensibility in the form of the WS* standards
+
+
+
+References
+
+http://blog.smartbear.com/apis/understanding-soap-and-rest-basics/
+
