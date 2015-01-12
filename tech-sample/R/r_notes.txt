@@ -1,0 +1,40 @@
+* Access Help File 
+
+?rnorm
+
+* Search Help 
+help.search("rnorm")
+?c : will give more help on c
+
+* Get arguments for a function 
+args("rnorm")
+
+
+
+
+Reference Card 
+
+http://cran.r-project.org/doc/contrib/Short-refcard.pdf
+
+
+available.packages()
+install.packages("name")
+
+
+Categories : 
+
+* Biostatistics : for medical data 
+
+* Data Science : for data from web analytics
+
+* Machine Learning : for data in computer science/computer vision
+
+* Natural Language Processing : For data from texts
+
+* Signal Processing : For data from electrical signals 
+
+* Business Analytics for data on customers
+
+* Econometrics for economic data
+
+* Statistical process control for data about idustrial procesess 
