@@ -17,6 +17,7 @@ sum(is.na(d[, "Ozone"]))
 # Find the mean by removing na values 
 
 mean(d[,"Ozone"], na.rm=TRUE)
+mean(d[["Ozone"]], na.rm=TRUE)
 
 # Find all rows where ozone is not null and is less than 20 
 
