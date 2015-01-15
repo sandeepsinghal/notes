@@ -1,12 +1,4 @@
-pollutantmean <- function (directory, pollutant = "sulfate", id) {
-    if (pollutant == "sulphate"){
-        print("s")
-    }
-    else {
-        print("p")
-    }
-}
-pollutantmean <- function (directory, pollutant = "sulfate", id) {
+pollutantmean <- function (directory, pollutant = "sulfate", id = 1:332) {
     data <- data.frame()
     for (i in id){
         filenumber <- sprintf("%03d", i)
