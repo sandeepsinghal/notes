@@ -9,8 +9,17 @@ complete <- function(directory, id = 1:332) {
     ## id nobs
     ## 1  117
     ## 2  1041
-    ## ...
+    ## ..
     ## where 'id' is the monitor ID number and 'nobs' is the
     ## number of complete cases
+    fileNames = sprintf("%03d", id)
+    fileList <- paste(directory, "/", fileNames , ".csv", sep="")
     
+    complete <- data.frame(id="", nobs="")
+    
+    for (file in fileList){
+        x <- read.csv(file)
+        n <- nrow(x[!is.na(x[,"sulfate"]), ])
+        print (n)
+    }
 }
