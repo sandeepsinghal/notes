@@ -12,14 +12,18 @@ complete <- function(directory, id = 1:332) {
     ## ..
     ## where 'id' is the monitor ID number and 'nobs' is the
     ## number of complete cases
-    fileNames = sprintf("%03d", id)
-    fileList <- paste(directory, "/", fileNames , ".csv", sep="")
     
-    complete <- data.frame(id="", nobs="")
     
-    for (file in fileList){
+    
+    cData <- data.frame(id="", nobs="")
+    
+    for (i in id){
+        fileNumber = sprintf("%03d", id)
+        file <- paste(directory, "/", fileNumber , ".csv", sep="")
         x <- read.csv(file)
         n <- nrow(x[!is.na(x[,"sulfate"]), ])
         print (n)
+        #cData <- rbind(cData, data.frame(id=file, nobs=n))
+        #print(cData)
     }
 }
