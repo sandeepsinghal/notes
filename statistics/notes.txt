@@ -1,0 +1,3 @@
+* Covariance provides the DIRECTION (positive, negative, near zero) of the linear relationship between two variables. 
+
+* Correlation provides DIRECTION and STRENGTH 
