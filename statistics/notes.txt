@@ -1,3 +1,5 @@
 * Covariance provides the DIRECTION (positive, negative, near zero) of the linear relationship between two variables. 
 
 * Correlation provides DIRECTION and STRENGTH 
+	Correlation is always between -1 and +1 and its scale is independent of the variables themseleves
+
