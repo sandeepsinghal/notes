@@ -1,0 +1,2 @@
+# Show from 2nd line onwards 
+tail -n +2 file
