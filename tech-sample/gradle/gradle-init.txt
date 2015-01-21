@@ -1,0 +1,8 @@
+gradle init --type java-library
+
+
+gradle init --type groovy-library
+
+
+gradle init --type basic
+
