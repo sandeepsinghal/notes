@@ -5,3 +5,6 @@ You can use git reset without any file name to undo all due changes. This can co
 
 
 git rm --cached <file>     : remove from version control without removing the files 
+
+
+git clone --depth=14 : clone only the last 14 commits , useful to get most recent commits 
