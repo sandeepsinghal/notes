@@ -1,0 +1,8 @@
+SVN								GIT
+
+svn up 							git pull
+svn revert filename				git checkout filename
+svn mv							git mv
+
+
+git reset HEAD <file>..." to unstage
