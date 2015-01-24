@@ -24,3 +24,11 @@ mean(d[["Ozone"]], na.rm=TRUE)
 x [x$Ozone < 20 & ! is.na(x$Ozone)  ,]
 
 
+
+Col/Row sum and means : Utility functions along with their equvivalent apply variants
+
+	* rowSums = apply(x, 1, sum)
+	* rowMeans = apply(x, 1, mean)
+	* colSums = apply(x, 2, sum)
+	* colMeans = apply(x, 2, mean)
+
