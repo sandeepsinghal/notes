@@ -1,0 +1,31 @@
+
+
+list database directory				: List all databases 
+connect to <database>				: Connect to a database 
+drop database <database>			: Drop a database 
+
+
+
+* DB2INSTANCE environment variable defines the default instance
+
+Commands used to manage\create instances
+=========================================
+db2icrt
+db2idrop
+db2ilist
+db2imigr
+db2iupdt
+db2start
+db2stop
+
+Database Cataloging
+===================
+
+The following are some options for cataloging a server with various communications protocols
+
+CATALOG NAMED PIPE NODE
+CATALOG TCPIP NODE
+CATALOG LOCAL NODE
+CATALOG LDAP NODE
+
+

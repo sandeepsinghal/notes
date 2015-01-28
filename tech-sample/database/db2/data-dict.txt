@@ -1,0 +1,41 @@
+
+* Query Tables
+
+	select t.tabschema, t.tabname, t.owner 
+	from syscat.tables t
+
+
+* Query Schemas
+
+	select s.schemaname, s.owner, s.definer 
+	from syscat.schemata s
+
+	select sa.grantor, sa.grantee, sa.schemaname
+	from syscat.schemaauth sa
+
+* Query Packages/Modules
+
+	select * from syscat.modules where modulename = 'DBMS_UTILITY';
+
+	select * from syscat.moduleobjects where objectmodulename = 'DBMS_UTILITY';
+
+	select * from syscat.moduleauth 
+
+* Query Views
+
+	syscat.views
+
+* Column Information 
+
+	syscat.columns
+
+* Index information 
+
+	syscat.indexes
+
+* Trigger Information 
+
+	syscat.triggers
+
+* Query Packages 
+

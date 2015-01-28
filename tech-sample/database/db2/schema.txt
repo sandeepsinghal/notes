@@ -1,0 +1,5 @@
+# Setting a schem
+set current schema = scott
+
+# Create a schema 
+create schema scott authorization tiger
