@@ -1,0 +1,1 @@
+create synonym syn_order_seq for sequence db2inst1.order_seq

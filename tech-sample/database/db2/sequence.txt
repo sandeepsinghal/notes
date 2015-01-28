@@ -1,0 +1,4 @@
+# Creating a sequence 
+
+
+CREATE SEQUENCE ORDER_SEQ START WITH 1 ;

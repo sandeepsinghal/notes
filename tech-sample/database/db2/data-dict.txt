@@ -1,14 +1,12 @@
 
 * Query Tables
 
-	select t.tabschema, t.tabname, t.owner 
-	from syscat.tables t
+	select t.tabschema, t.tabname, t.owner from syscat.tables t where t.tabschema = 'DB2INST1'
 
 
 * Query Schemas
 
-	select s.schemaname, s.owner, s.definer 
-	from syscat.schemata s
+	select s.schemaname, s.owner, s.definer from syscat.schemata s
 
 	select sa.grantor, sa.grantee, sa.schemaname
 	from syscat.schemaauth sa

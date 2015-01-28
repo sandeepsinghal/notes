@@ -1,0 +1,5 @@
+# Describe a table 
+
+describe table tabschema.tabname
+
+
