@@ -10,7 +10,6 @@ rankhospital <- function(state, outcome, num = "best") {
         stop('invalid rank')
     }
     
-    
     # Read the data and subset to get data only for that state
     outcomeData <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
     outcomeState <- outcomeData[outcomeData$State == state,]
@@ -32,7 +31,11 @@ rankhospital <- function(state, outcome, num = "best") {
     }
     outcomeState[,column] <- as.numeric(outcomeState[,column])
     ranked <- rankAndOrder (outcomeState, column, rank)
-    print(ranked)
+    
+    if (length(ranked) > 0){
+        return(ranked)
+    }
+    return(NULL)
 }
 
 rankAndOrder <- function (outcomeState, column, rank) {
