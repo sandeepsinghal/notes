@@ -1,27 +1,40 @@
 best <- function(state, outcome) {
     
+    options(warn=-1)
     valid_outcomes = c("heart attack","heart failure","pneumonia")
     
     if (!is.element(outcome, valid_outcomes)){
         stop('outcome is not present')
     }
     
-    outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
+    outcomeData <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
 
-    outcome_state <- outcome[outcome$State == state,]
+    outcomeState <- outcomeData[outcomeData$State == state,]
     
-    nState <- nrow(outcome_state)
+    nState <- nrow(outcomeState)
     
     if (nState == 0){
         stop('invalid state')
     }
+
+    column = numeric()
     
-    # heart attack : column 11 
-    # Heart failure : column 17
-    # Pneumonia : column 23
-    #outcome[,11] <- as.numeric(outcome[, 11])
-    #outcome[,17] <- as.numeric(outcome[, 17])
-    #outcome[,23] <- as.numeric(outcome[, 23])
+    if (outcome == 'heart attack'){
+        column <- 11    
+    }
+    else if (outcome == 'heart failure'){
+        column <- 17
+    }
+    else if (outcome == 'pneumonia'){
+        column <- 23
+    }
     
+    outcomeState[,column] <- as.numeric(outcomeState[,column])
+    interestingColumnVector <- outcomeState[,column]
+    #print (sort(interestingColumnVector))
+    minValue <- min(interestingColumnVector, na.rm = TRUE)
+    minIndex <- which (interestingColumnVector == minValue)
+    
+    hospitalName <- outcomeState[minIndex, 2]
  
 }
