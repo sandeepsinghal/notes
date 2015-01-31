@@ -32,7 +32,7 @@ rankhospital <- function(state, outcome, num = "best") {
     }
     outcomeState[,column] <- as.numeric(outcomeState[,column])
     ranked <- rankAndOrder (outcomeState, column, rank)
-    
+    print(ranked)
 }
 
 rankAndOrder <- function (outcomeState, column, rank) {
@@ -42,8 +42,16 @@ rankAndOrder <- function (outcomeState, column, rank) {
     }
 
     orderedOutcomeState <- outcomeState[order(outcomeState[, column], decreasing = decreasingOrder),]
+    # The column of our interest
+    interestingColumnVector <- orderedOutcomeState[, column]
     
-    print(orderedOutcomeState[,column])
+    # Get the value of disease rate at the rank. 
+    valueAtRank <- orderedOutcomeState[abs(rank),column]
+    
+    # Get all the indices with same rate 
+    rankIndex <- which (interestingColumnVector == valueAtRank)
+    
+    hospitalName <- orderedOutcomeState[rankIndex, 2]
     
 }
 
