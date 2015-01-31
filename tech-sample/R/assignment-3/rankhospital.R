@@ -44,17 +44,19 @@ rankAndOrder <- function (outcomeState, column, rank) {
         decreasingOrder <- TRUE
     }
 
-    orderedOutcomeState <- outcomeState[order(outcomeState[, column], decreasing = decreasingOrder),]
+    orderedOutcomeState <- outcomeState[order(outcomeState[, column], outcomeState[, 2] ,decreasing = decreasingOrder),]
+   
+    
     # The column of our interest
-    interestingColumnVector <- orderedOutcomeState[, column]
+    #interestingColumnVector <- orderedOutcomeState[, column]
     
     # Get the value of disease rate at the rank. 
-    valueAtRank <- orderedOutcomeState[abs(rank),column]
+    #valueAtRank <- orderedOutcomeState[abs(rank),column]
     
     # Get all the indices with same rate 
-    rankIndex <- which (interestingColumnVector == valueAtRank)
+    #rankIndex <- which (interestingColumnVector == valueAtRank)
     
-    hospitalName <- orderedOutcomeState[rankIndex, 2]
+    hospitalName <- orderedOutcomeState[abs(rank), 2]
     
 }
 
@@ -83,3 +85,11 @@ checkValidOutcome <- function (outcome) {
     }
     return(TRUE)
 }
+
+# Test Cases
+# rankhospital("TX", "heart failure", 4)
+# [1] "DETAR HOSPITAL NAVARRO"
+# rankhospital("MD", "heart attack", "worst")
+# [1] "HARFORD MEMORIAL HOSPITAL"
+# rankhospital("MN", "heart attack", 5000)
+# [1] NA
