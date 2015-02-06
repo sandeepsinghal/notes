@@ -1,0 +1,14 @@
+Prefix : ctrl + b
+
+
+c : create new window
+n : next
+p : preview
+w : list windows 
+f : find window
+, : name window
+& : kill window
+
+
+
+tmux attach : connect to an existing session
