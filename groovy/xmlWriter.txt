@@ -1,0 +1,28 @@
+      afterPack = {
+        // insert the fortress valve declaration into the server.xml
+        def tomcatHome = idata.getVariable("tomcat.home");
+        serverXml = tomcatHome + "/conf/server.xml";
+
+        
+        if (new java.io.File(serverXml).exists()) {
+          def ant = new AntBuilder();
+          def server = new XmlSlurper().parse(new java.io.File(serverXml));
+          def fortressValve =  new XmlSlurper().parse(new java.io.File(tomcatHome + "/conf/fortressvalve.xml"))
+
+          server.Service.Engine.Host.Valve.findAll{it.@className='com.fiberlink.valve.FortressValve'}.each { it.replaceNode{} }
+
+          server.Service.Engine.Host.appendNode( fortressValve )
+
+          def ccNumber = System.getProperty("cc.number");
+
+          if (ccNumber == null) {
+              ccNumber = idata.getVariable("cc.number");
+          }
+          ant.move(file: serverXml, todir: tomcatHome + "/bak/" + ccNumber );
+          
+          f = new java.io.File(serverXml);
+          server.each{ 
+            f << groovy.xml.XmlUtil.serialize(it);
+          }
+        }
+      }
