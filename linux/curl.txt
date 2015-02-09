@@ -1,0 +1,6 @@
+# Make a head request only with curl
+curl -I www.google.com
+
+
+# HTTP Basic auth with curl with post 
+curl -u ssinghal:password -X POST http://server/path
