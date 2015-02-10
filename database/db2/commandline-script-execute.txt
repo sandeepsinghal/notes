@@ -1,0 +1,2 @@
+# Run a sql file on the command line 
+db2 -vw -td@ -f a.sql -l a.log -z a.err
