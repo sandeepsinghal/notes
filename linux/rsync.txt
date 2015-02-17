@@ -1,0 +1,6 @@
+# Sync two local directories 
+rsync -anv dir1 dir2 
+
+-n option is for "DRY RUN"
+
+

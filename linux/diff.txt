@@ -1,0 +1,2 @@
+# Diff between two directories 
+diff --brief -r dir1/ dir2/
