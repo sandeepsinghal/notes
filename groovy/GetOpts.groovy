@@ -1,21 +1,28 @@
-def cli = new CliBuilder()
-cli.with {
-     usage: 'Self'
-     h longOpt:'help', 'usage information'
-     i longOpt:'input', 'input file', args:1
-     o longOpt:'output', 'output file, mandatory argument',args:1, required:true
-     a longOpt:'action', 'action to invoke',args:1
-     d longOpt:'directory','process all files of directory', args:1
-}
+opts = getOpts()
 
-def opt = cli.parse(args)
+println opts.i 
 
-if( args.length == 0 || opt == null) {
-    cli.usage()
-    return
-}
+println opts.o
 
 
-if( opt.i ) {
-	println opt.i
+
+def getOpts() {
+
+	def cli = new CliBuilder()
+	cli.with {
+		 usage: 'Self'
+		 h longOpt:'help', 'usage information'
+		 i longOpt:'input', 'input file', args:1
+		 o longOpt:'output', 'output file, mandatory argument',args:1, required:true
+		 a longOpt:'action', 'action to invoke',args:1
+		 d longOpt:'directory','process all files of directory', args:1
+	}
+
+	def opt = cli.parse(args)
+
+	if( args.length == 0 || opt == null) {
+		cli.usage()
+		return null
+	}
+	return opt
 }
