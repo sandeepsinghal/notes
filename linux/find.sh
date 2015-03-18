@@ -11,8 +11,8 @@ find . -owner ssinghal
 # Find files older than 30 days
 find . -ctime +30
 
-# Delete files older than 30 days
-
+# Find files created in the last 2 days 
+find . -ctime -2
 
 # Find with Exec 
 find . -name "*vw*" -exec grep -il "order by" {} \;
